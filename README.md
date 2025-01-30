@@ -1,6 +1,6 @@
 # flutter_flame_lottie_size_effect_testing
 
-#### Тестування ефекту SizeEffect на Flame. Flutter
+<small> Тестування ефекту SizeEffect на Flame. <small>
 
 ## Getting Started
 
