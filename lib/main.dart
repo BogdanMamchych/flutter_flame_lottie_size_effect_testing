@@ -25,13 +25,15 @@ class SizeEffectGame extends FlameGame {
     debugMode = true;
     //Завантаження анімації та створення 'будівельного' віджету
     final LottieBuilder lottieBuilder = Lottie.asset('assets/win.json');
-    //Компонування анімації, щоб Flame використовував анімації 
+    //Компонування анімації, щоб Flame використовував анімації
     final LottieComposition lottieComposition = await loadLottie(lottieBuilder);
     //Створення самого компоненту анімації, цей компонент вже можна добавляти до світу, який вам взбриде в голову :)
     //Також можна тут погратися з position та size та іншими атрибутами на ваш розсуд
     //Тільки запрещаю ставити дуже великі значення, бо наш кубок(який зароблено непосильним трудом) полетить в стратосферу :)
     LottieComponent animation = LottieComponent(lottieComposition,
-        position: Vector2.all(250), size: Vector2.all(200), anchor: Anchor.center);
+        position: Vector2.all(250),
+        size: Vector2.all(200),
+        anchor: Anchor.center);
     TestTextBox resizeCupText = TestTextBox("Resize cup");
     add(animation);
     ButtonComponent resizeCupButton = ButtonComponent(
@@ -42,12 +44,11 @@ class SizeEffectGame extends FlameGame {
           if (reset) {
             animation.add(
                 SizeEffect.to(Vector2.all(400), EffectController(duration: 1)));
-            reset = false;
           } else {
             animation.add(
                 SizeEffect.by(Vector2.all(-50), EffectController(duration: 1)));
-            reset = true;
           }
+          reset = !reset;
         });
 
     add(resizeCupButton);
