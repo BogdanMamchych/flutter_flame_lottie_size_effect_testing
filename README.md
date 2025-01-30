@@ -1,6 +1,6 @@
 # flutter_flame_lottie_size_effect_testing
 
-<small> Тестування ефекту SizeEffect на Flame. <small>
+<font size="20"> Тестування ефекту SizeEffect на Flame. <font>
 
 ## Getting Started
 
